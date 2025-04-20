@@ -2,11 +2,13 @@ from unittest.mock import patch
 
 from src.product import Product
 
+
 def test_product_init(product):
     assert product.name == "Samsung Galaxy S23 Ultra"
     assert product.description == "256GB, Серый цвет, 200MP камера"
     assert product.price == 180000.0
     assert product.quantity == 5
+
 
 def test_product_class():
     product = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
@@ -15,7 +17,8 @@ def test_product_class():
     product.price = 31000.0
     product.quantity = 14
 
+
 def test_product_update(product):
-    with patch('builtins.input', return_value='y'):
+    with patch("builtins.input", return_value="y"):
         product.price = 0
     assert "Цена не должна быть нулевая или отрицательная"
