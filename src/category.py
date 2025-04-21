@@ -15,6 +15,9 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
+    def __str__(self):
+        return f"{self.name}, количество продуктов: {len(self.__products)} шт."
+
     def add_product(self, product: Product) -> None:
         """Добавляет продукт в категорию."""
         if isinstance(product, Product):
@@ -26,12 +29,7 @@ class Category:
     @property
     def products(self):
         """Геттер для получения списка товаров в виде строк."""
-        return "\n".join(
-            [
-                f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
-                for product in self.__products
-            ]
-        )
+        return [str(product) for product in self.__products]
 
     @property
     def products_in_list(self):

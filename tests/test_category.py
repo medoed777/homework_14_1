@@ -11,10 +11,10 @@ def test_category_init(first_category, two_category):
 
 
 def test_category_products_property(first_category):
-    assert first_category.products == (
-        "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.\n"
-        "Iphone 15, 210000.0 руб. Остаток: 8 шт."
-    )
+    assert first_category.products == [
+        'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.',
+        'Iphone 15, 210000.0 руб. Остаток: 8 шт.'
+    ]
 
 
 def test_category_add_product(first_category, product):
