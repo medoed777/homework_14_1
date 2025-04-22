@@ -27,8 +27,10 @@ def test_product_update(product):
 def test_product_price(product):
     assert product.price > 0
 
+
 def test_product_str(product):
     assert str(product) == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
+
 
 def test_product_add(product_with_add1, product_with_add2):
     assert 1500000.0

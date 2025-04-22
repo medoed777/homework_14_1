@@ -1,8 +1,9 @@
 import pytest
 
 from src.category import Category
-from src.product import Product
 from src.category_iterator import CategoryIterator
+from src.product import Product
+
 
 @pytest.fixture
 def first_category():
@@ -36,18 +37,32 @@ def product():
         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
     )
 
+
 @pytest.fixture
 def category_iterator(first_category):
     return CategoryIterator(first_category)
+
 
 @pytest.fixture
 def zero_category():
     return Category("Пустая категория", "Описание", [])
 
+
 @pytest.fixture
 def product_with_add1():
-    return Product(name="Samsung Galaxy S23 Ultra", description="Флагманский смартфон от Samsung", price=180000.0, quantity=5)
+    return Product(
+        name="Samsung Galaxy S23 Ultra",
+        description="Флагманский смартфон от Samsung",
+        price=180000.0,
+        quantity=5,
+    )
+
 
 @pytest.fixture
 def product_with_add2():
-    return Product(name="iPhone 14 Pro", description="Флагманский смартфон от Apple", price=200000.0, quantity=3)
+    return Product(
+        name="iPhone 14 Pro",
+        description="Флагманский смартфон от Apple",
+        price=200000.0,
+        quantity=3,
+    )
