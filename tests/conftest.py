@@ -66,3 +66,8 @@ def product_with_add2():
         price=200000.0,
         quantity=3,
     )
+
+
+@pytest.fixture
+def product_list():
+    return []
