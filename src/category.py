@@ -11,7 +11,7 @@ class Category:
     def __init__(self, name, description, products=None):
         self.name = name
         self.description = description
-        self.__products = products if products is not None else []
+        self.__products = products
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
