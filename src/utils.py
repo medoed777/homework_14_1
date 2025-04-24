@@ -13,11 +13,11 @@ def read_json(path: str) -> dict:
 
 
 def create_category_from_json(data):
-    categorys = []
+    category_list = []
     for category in data:
         products = []
         for product in category["products"]:
             products.append(Product(**product))
         category["products"] = products
-        categorys.append(Category(**category))
-    return categorys
+        category_list.append(Category(**category))
+    return category_list
