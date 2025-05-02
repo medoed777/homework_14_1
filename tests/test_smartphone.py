@@ -11,10 +11,11 @@ def test_smartphone_init(product_smartphone1):
     assert product_smartphone1.memory == 256
     assert product_smartphone1.color == "Серый"
 
+
 def test_smartphone_add(product_smartphone1, product_smartphone2):
     assert product_smartphone1 + product_smartphone2 == 2580000.0
 
+
 def test_smartphone_add_error(product_smartphone1):
     with pytest.raises(TypeError):
-        result = product_smartphone1 + 1
-
+        return product_smartphone1 + 1

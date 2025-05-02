@@ -44,5 +44,6 @@ def test_category_add_product_error(first_category, product):
     with pytest.raises(TypeError):
         first_category.add_product(1)
 
+
 def test_category_add_product_smartphone(first_category, product_smartphone1):
     first_category.add_product(product_smartphone1) == product_smartphone1

@@ -17,4 +17,4 @@ def test_lawngrass_add(product_lawngrass1, product_lawngrass2):
 
 def test_lawngrass_add_error(product_lawngrass1):
     with pytest.raises(TypeError):
-        result = product_lawngrass1 + 1
+        return product_lawngrass1 + 1
