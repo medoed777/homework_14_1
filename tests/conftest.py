@@ -120,3 +120,8 @@ def product_lawngrass2():
         "5 дней",
         "Темно-зеленый",
     )
+
+
+@pytest.fixture
+def category_without_product():
+    return Category(name="Смартфоны", description="Смартфоны ок", products=[])
