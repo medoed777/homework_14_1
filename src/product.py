@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.print_mixin import PrintMixin
+
+
+class Product(BaseProduct, PrintMixin):
     name: str
     description: str
     price: float
@@ -9,14 +13,19 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        if isinstance(other, Product):
-            return (self.price * self.quantity) + (other.price * other.quantity)
-        return NotImplemented
+        if not isinstance(other, Product):
+            raise TypeError("Нельзя складывать продукты разных классов")
+
+        if type(self) is not type(other):
+            raise TypeError("Нельзя складывать продукты разных классов")
+
+        return (self.price * self.quantity) + (other.price * other.quantity)
 
     @classmethod
     def new_product(cls, product_data: dict, product_list: list):
