@@ -1,5 +1,4 @@
 import pytest
-from pyexpat.errors import messages
 
 from src.category_iterator import CategoryIterator
 from src.product import Product
@@ -68,4 +67,7 @@ def test_custom_exception(capsys, first_category):
     product_add = Product("Samsung", "256GB, Серый цвет, 200MP камера", 180000.0, 0)
     first_category.product_count = product_add
     message = capsys.readouterr()
-    assert message.out.strip().split('\n')[-2] == "Товар с нулевым количеством не может быть добавлен"
+    assert (
+        message.out.strip().split("\n")[-2]
+        == "Товар с нулевым количеством не может быть добавлен"
+    )
