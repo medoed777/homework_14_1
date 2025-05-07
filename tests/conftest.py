@@ -3,6 +3,7 @@ import pytest
 from src.category import Category
 from src.category_iterator import CategoryIterator
 from src.lawngrass import LawnGrass
+from src.order import Order
 from src.product import Product
 from src.smartphone import Smartphone
 
@@ -120,3 +121,14 @@ def product_lawngrass2():
         "5 дней",
         "Темно-зеленый",
     )
+
+
+@pytest.fixture
+def setup_orders():
+    product1 = Product(
+        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
+    )
+    product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
+    order1 = Order(product1, 3)
+    order2 = Order(product2, 5)
+    return order1, order2
