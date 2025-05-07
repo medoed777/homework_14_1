@@ -1,6 +1,3 @@
-import pytest
-
-
 def test_order_full_price(setup_orders):
     order1, order2 = setup_orders
     assert order1.full_price == 540000.0

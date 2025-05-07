@@ -13,10 +13,8 @@ class Order(BaseEntity):
         self.quantity = quantity
         self.full_price = self.calkulate_full_price()
 
-
     def __str__(self):
         return f"Заказ: {self.product.name}, Количество: {self.quantity}, Полная цена: {self.full_price}"
-
 
     def calkulate_full_price(self):
         return self.product.price * self.quantity

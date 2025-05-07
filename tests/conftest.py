@@ -122,12 +122,12 @@ def product_lawngrass2():
         "Темно-зеленый",
     )
 
+
 @pytest.fixture
 def setup_orders():
-    product1 = Product("Samsung Galaxy S23 Ultra",
-                "256GB, Серый цвет, 200MP камера",
-                180000.0,
-                5)
+    product1 = Product(
+        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
+    )
     product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
     order1 = Order(product1, 3)
     order2 = Order(product2, 5)
