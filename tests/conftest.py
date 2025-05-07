@@ -124,6 +124,11 @@ def product_lawngrass2():
 
 
 @pytest.fixture
+def category_without_product():
+    return Category(name="Смартфоны", description="Смартфоны ок", products=[])
+
+
+@pytest.fixture
 def setup_orders():
     product1 = Product(
         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
